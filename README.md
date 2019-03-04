@@ -18,8 +18,8 @@ For each category of security-sensitive API pairs, there are five files. <br>
 * **both_stages_positive.txt**: the file stores all the positive pairs identified by `SinkFinder`, i.e., a union of the positive result of the first stage and the second stage.<br>
 
 The above files have the same format. 
-> **Format**: <tag, pair>, the tag indicates whether we believe the pair is security-sensitive ('1'), non-security-sensitive ('0'), or not sure ('X'). And the pair is similar to those frequent pairs, except that the frequency is stripped. <br>
-> **An example**: 1 kmalloc kfree DATA_FROM(0, 1)
+> **Format**: <`tag`, `pair`>, the tag indicates whether we believe the pair is security-sensitive ('1'), non-security-sensitive ('0'), or not sure ('X'). And the pair is similar to those frequent pairs, except that the frequency is stripped. <br>
+> **An example**: 1 `kmalloc` `kfree` `DATA_FROM`(0, 1)
 
 `SinkFinder` originally generates a tag of 'X' for each identified pair. During manual inspection, if we believe the pair is positive, we mark it as '1', otherwise we mark it as '0'. A pair marked with '0' in a _\_positive.txt_ file can be regarded as a false positive of our tool. 
 
