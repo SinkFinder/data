@@ -1,4 +1,4 @@
-The evaluation dataset and evaluation result of SinkFinder. "`SinkAPIs.tar.gz`" contains security-sensitive API pairs identified by **`SinkFinder`**, and "`Vulnerabilities.tar.gz`" contains the vulnerabilties or bugs we found.
+The evaluation dataset and evaluation result of SinkFinder. `SinkAPIs.tar.gz` contains security-sensitive API pairs identified by **`SinkFinder`**, and `Vulnerabilities.tar.gz` contains the vulnerabilties or bugs we found.
 
 # Sink APIs
 
