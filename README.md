@@ -1,8 +1,8 @@
-The evaluation dataset and evaluation result of SinkFinder. `SinkAPIs.tar.gz` contains security-sensitive API pairs identified by **`SinkFinder`**, and `Vulnerabilities.tar.gz` contains the vulnerabilties or bugs we found.
+The evaluation dataset and evaluation result of SinkFinder. `SinkAPIs.tar.gz` contains security-sensitive API pairs identified by **`SinkFinder`**, and `Bugs.tar.gz` contains the bugs detected by SinkFinder.
 
 # Sink APIs
 
-`SinkFinder` is evaluated on three targets: `Linux-v4.19`, `OpenSSL-v1.1.1` and `PostgreSQL-v11.1`. On the Linux kernel, eight categories of security-sensitive APIs are identified. While on `OpenSSL` and `PostgreSQL`, only "`Alloc` / `Free`" APIs is identified for vulnerability detection. 
+`SinkFinder` is evaluated on three targets: `Linux-v4.19`, `OpenSSL-v1.1.1` and `PostgreSQL-v11.1`. On the Linux kernel, eight categories of security-sensitive APIs are identified. While on `OpenSSL` and `PostgreSQL`, only "`Alloc` / `Free`" APIs is identified for bug detection. 
 
 For each target of evaluation, the file `frequent-pairs.txt` contains frequent API pairs, per line per frequent API pair. 
 A pair is in the format of (`API1`, `API2`, `Relation 1`, `Relation 2`, ...), where `API1` and `API2` are the two APIs in pair, and a relation describes the data flow relationship between the two APIs. There may be multiple relations between two APIs. Currently, `SinkFinder` only supports two types of relations, **data dependent** (`DFATA_DEP`) and **data sharing** (`DATA_SHARE`). We use two frequent pairs mined from the Linux-v4.19 to illustrate this.
@@ -25,9 +25,9 @@ The above files have the same format.
 
 
 
-# Vulnerabilities
+# Bugs
 
-The vulnerabilities detected by our **use-after-free** checker and **mismatched-alloc-free** checker. It takes the allocation / deallocation APIs (located at `AllocFree/both_stages_positive.txt`) identified by our method to detect vulnerabilities. It should be noted that the two checkers directly takes the original output of SinkFinder to detect vulnerabilities. Therefore, our method is **completely automatically** from identifying security-sensitive APIs to detecting vulnerabilities. <br>
-* **Vulnerabilities/Linux** contains the patches for the Linux kernel vulnerabilities
-* **Vulnerabilities/OpenSSL** contains the link to our report of the vulnerability we found in OpenSSL
-* **Vulnerabilities/PostgreSQL** contains the links to our reports of the vulnerabilities we found in PostgreSQL
+The bugs detected by our **use-after-free** checker and **mismatched-alloc-free** checker. It takes the allocation / deallocation APIs (located at `AllocFree/both_stages_positive.txt`) identified by our method to detect bugs. It should be noted that the two checkers directly takes the original output of SinkFinder to detect bugs. Therefore, our method is **completely automatically** from identifying security-sensitive APIs to detecting bugs. <br>
+* **Bugs/Linux** contains the patches for the Linux kernel bugs
+* **Bugs/OpenSSL** contains the link to our report of the bug we found in OpenSSL
+* **Bugs/PostgreSQL** contains the links to our reports of the bugs we found in PostgreSQL
